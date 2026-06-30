@@ -1,0 +1,142 @@
+/* ========================= */
+/* TABLETS */
+/* ========================= */
+
+@media (max-width: 992px) {
+
+  .navbar {
+    padding: 18px 25px;
+  }
+
+  .profile-content {
+    flex-direction: column;
+    padding: 25px;
+    gap: 25px;
+  }
+
+  .profile-card {
+    width: 100%;
+  }
+
+  .orders {
+    width: 100%;
+  }
+
+  .order-card {
+    width: 100%;
+  }
+}
+
+/* ========================= */
+/* CELULARES */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .navbar h1 {
+    font-size: 28px;
+  }
+
+  .user-info {
+    flex-direction: column;
+  }
+
+  .profile-content {
+    padding: 20px;
+  }
+
+  .profile-card {
+    padding: 25px;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-card h2 {
+    font-size: 24px;
+  }
+
+  .orders h2 {
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .order-card {
+    padding: 18px;
+  }
+
+  .order-card h3 {
+    font-size: 18px;
+  }
+
+  .order-card p {
+    font-size: 14px;
+  }
+
+  .order-card h4 {
+    font-size: 20px;
+  }
+}
+
+/* ========================= */
+/* CELULARES PEQUEÑOS */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+  .navbar h1 {
+    font-size: 24px;
+  }
+
+  .user-info img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .profile-content {
+    padding: 15px;
+  }
+
+  .profile-card {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-card p {
+    font-size: 14px;
+  }
+
+  .profile-card button {
+    font-size: 15px;
+  }
+
+  .orders h2 {
+    font-size: 24px;
+  }
+
+  .order-card {
+    border-left-width: 6px;
+    padding: 15px;
+  }
+
+  .status {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

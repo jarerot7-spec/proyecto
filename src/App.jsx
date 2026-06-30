@@ -1,5 +1,7 @@
-import Login from "./components/Login";
+import Profile from "./components/Profile";
 
-export default function App() {
-  return <Login />;
+function App() {
+  return <Profile />;
 }
+
+export default App;

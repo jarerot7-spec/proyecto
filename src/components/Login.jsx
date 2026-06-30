@@ -1,9 +1,11 @@
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
     <div className="login-container">
 
+      {/* IZQUIERDA */}
       <div className="login-left">
         <img
           src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1000"
@@ -11,6 +13,7 @@ function Login() {
         />
       </div>
 
+      {/* DERECHA */}
       <div className="login-right">
 
         <h1>🍔 SmartFood</h1>
@@ -26,7 +29,22 @@ function Login() {
 
         <button>Iniciar sesión</button>
 
-        <a href="#">¿Olvidaste tu contraseña?</a>
+        <a href="#" className="forgot-password">
+          ¿Olvidaste tu contraseña?
+        </a>
+
+        <div className="divider">
+          <span>o</span>
+        </div>
+
+        <div className="register-section">
+          <p>¿Aún no tienes una cuenta?</p>
+          <Link to="/register">
+           <button className="register-btn">
+             Crear cuenta
+           </button>
+          </Link>
+        </div>
 
       </div>
 

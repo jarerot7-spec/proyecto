@@ -1,0 +1,132 @@
+.register-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* IZQUIERDA */
+.register-left {
+  flex: 1;
+}
+
+.register-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* DERECHA */
+.register-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  background: #f8fbff;
+}
+
+.register-right h1 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.register-right h2 {
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+.register-right p {
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+.register-right label {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.register-right input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  transition: .3s;
+}
+
+.register-right input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37,99,235,.2);
+}
+
+.register-right button {
+  padding: 12px;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.register-right button:hover {
+  background: #2563eb;
+}
+
+.login-link{
+  text-align:center;
+  margin-top:20px;
+}
+
+.login-link a{
+  color:#2563eb;
+  text-decoration:none;
+}
+
+.login-link a:hover{
+  text-decoration:underline;
+}
+
+/* TABLET */
+@media (max-width:768px){
+
+  .register-container{
+      flex-direction:column;
+  }
+
+  .register-left{
+      height:250px;
+  }
+
+  .register-right{
+      padding:35px;
+  }
+
+}
+
+/* CELULAR */
+@media (max-width:480px){
+
+  .register-left{
+      height:180px;
+  }
+
+  .register-right{
+      padding:20px;
+  }
+
+  .register-right h1{
+      font-size:28px;
+      text-align:center;
+  }
+
+  .register-right h2{
+      text-align:center;
+  }
+
+  .register-right p{
+      text-align:center;
+  }
+
+}

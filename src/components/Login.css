@@ -2,6 +2,7 @@
   display: flex;
   height: 100vh;
   font-family: Arial, sans-serif;
+  background: #0f172a;
 }
 
 /* IZQUIERDA (IMAGEN) */
@@ -22,56 +23,68 @@
   flex-direction: column;
   justify-content: center;
   padding: 60px;
-  background: #f5fff7;
+  background: #f8fbff;
 }
 
 /* TITULOS */
 .login-right h1 {
-  color: #2e7d32;
+  color: #1e3a8a;
   margin-bottom: 10px;
 }
 
 .login-right h2 {
   margin-bottom: 10px;
+  color: #1e293b;
 }
 
 /* INPUTS */
 .login-right input {
   padding: 12px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   outline: none;
+  background: #ffffff;
+  transition: all 0.3s ease;
 }
 
 .login-right input:focus {
-  border-color: #2e7d32;
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
 }
 
 /* BOTÓN */
 .login-right button {
   padding: 12px;
-  background: #2e7d32;
+  background: #1e3a8a;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   margin-top: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .login-right button:hover {
-  background: #1b5e20;
+  background: #2563eb;
+  transform: translateY(-2px);
 }
 
 /* LINK */
 .login-right a {
   margin-top: 10px;
   font-size: 14px;
-  color: #2e7d32;
+  color: #2563eb;
   text-decoration: none;
 }
 
-/* 🔥 RESPONSIVE (CLAVE) */
+.login-right a:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .login-container {
     flex-direction: column;
