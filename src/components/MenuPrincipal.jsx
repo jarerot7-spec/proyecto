@@ -1,4 +1,4 @@
-import productos from "./data/productos";
+import { productos } from "./data/productos";
 import './MenuPrincipal.css';
 
 function MenuPrincipal({onOrdenar}){
