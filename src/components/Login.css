@@ -45,7 +45,15 @@
   border-radius: 8px;
   outline: none;
   background: #ffffff;
+
+  color: #0f172a; /* 👈 FIX: texto visible */
+  font-size: 14px;
+
   transition: all 0.3s ease;
+}
+
+.login-right input::placeholder {
+  color: #94a3b8;
 }
 
 .login-right input:focus {
@@ -63,6 +71,7 @@
   cursor: pointer;
   margin-top: 10px;
   font-weight: bold;
+
   transition: all 0.3s ease;
 }
 
