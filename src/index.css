@@ -1,4 +1,13 @@
 :root {
+  --utp-dark: #1e3a8a;
+  --utp-red: #1e3a8a;
+  --utp-white: #ffffff;
+  --utp-gray-bg: #f8fafc;
+  --utp-text: #1e293b;
+  --utp-green: #16a34a;
+  --utp-gray-secundario: #64748b;
+  --utp-gray-tercero: #e2e2e2;
+  
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -52,6 +61,8 @@
 
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #root {

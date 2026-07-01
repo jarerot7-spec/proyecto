@@ -1,0 +1,119 @@
+.pedido-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 40px 20px;
+  font-family: var(--sans);
+
+  background-image: linear-gradient(rgba(226, 226, 226, 0.948), rgba(226, 226, 226, 0.948)),
+  url("https://static.vecteezy.com/system/resources/previews/007/078/793/non_2x/fast-food-set-icons-fastfood-background-doodle-fast-food-icons-food-icons-on-white-background-hand-drown-fast-food-set-icons-free-vector.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pedido-titulo {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--utp-text);
+  margin-bottom: 4px;
+}
+
+.pedido-card {
+  background-color: var(--utp-gray-bg);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+  text-align: left;
+}
+
+.pedido-card h3 {
+  font-size: 21px;
+  color: var(--utp-text);
+  margin-bottom: 6px;
+}
+
+.pedido-card h4 {
+  font-size: 16px;
+  color: var(--utp-text);
+  margin-bottom: 10px;
+}
+
+.pedido-detalle {
+  font-size: 14px;
+  color: #585858;
+  margin-bottom: 8px;
+}
+
+.pedido-precio {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--utp-red);
+}
+
+.pedido-fila {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--utp-text);
+  padding: 6px 0;
+}
+
+.pedido-descuento {
+  color: var(--utp-green);
+}
+
+.pedido-total {
+  border-top: 3px solid #b9b9b9;
+  margin-top: 6px;
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 17px;
+  color: var(--utp-red);
+}
+
+.pedido-opcion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 3px solid #b9b9b9;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--utp-text);
+  cursor: pointer;
+}
+
+.pedido-btn-confirmar {
+  background-color: var(--utp-red);
+  color: var(--utp-white);
+  border: none;
+  border-radius: 24px;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  max-width: 420px;
+}
+
+.pedido-btn-confirmar:hover {
+  opacity: 0.9;
+}
+
+
+@media (max-width: 480px) {
+  .pedido-container {
+    padding: 20px 12px;
+  }
+
+  .pedido-card {
+    padding: 125px;
+  }
+}
