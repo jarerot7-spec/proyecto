@@ -1,0 +1,123 @@
+.login-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+}
+
+/* IZQUIERDA (IMAGEN) */
+.login-left {
+  flex: 1;
+}
+
+.login-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* DERECHA (FORMULARIO) */
+.login-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  background: #f8fbff;
+}
+
+/* TITULOS */
+.login-right h1 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.login-right h2 {
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+/* INPUTS */
+.login-right input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+
+  color: #0f172a; /* 👈 FIX: texto visible */
+  font-size: 14px;
+
+  transition: all 0.3s ease;
+}
+
+.login-right input::placeholder {
+  color: #94a3b8;
+}
+
+.login-right input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+}
+
+/* BOTÓN */
+.login-right button {
+  padding: 12px;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+
+  transition: all 0.3s ease;
+}
+
+.login-right button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* LINK */
+.login-right a {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.login-right a:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-left {
+    height: 220px;
+  }
+
+  .login-right {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-right {
+    padding: 20px;
+  }
+
+  .login-left {
+    height: 180px;
+  }
+
+  .login-right h1 {
+    font-size: 22px;
+  }
+}
