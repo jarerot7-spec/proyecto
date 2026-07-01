@@ -1,6 +1,7 @@
 import "./Login.css";
 import { Link } from "react-router-dom";
 
+
 function Login() {
   return (
     <div className="login-container">
@@ -27,7 +28,9 @@ function Login() {
         <label>Contraseña</label>
         <input type="password" placeholder="Ingresa tu contraseña" />
 
-        <button>Iniciar sesión</button>
+        <Link to="/menu">
+         <button>Iniciar sesión</button>
+       </Link>
 
         <a href="#" className="forgot-password">
           ¿Olvidaste tu contraseña?

@@ -1,7 +1,15 @@
 import "./Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
+
+  const navigate = useNavigate();
+
+  const handleRegister = () => {
+    alert("✅ Datos guardados correctamente");
+    navigate("/");
+  };
+
   return (
     <div className="register-container">
 
@@ -33,7 +41,9 @@ function Register() {
         <label>Confirmar contraseña</label>
         <input type="password" placeholder="Repite la contraseña" />
 
-        <button>Registrarse</button>
+        <button onClick={handleRegister}>
+          Registrarse
+        </button>
 
         <p className="login-link">
           ¿Ya tienes una cuenta? <Link to="/">Inicia sesión</Link>

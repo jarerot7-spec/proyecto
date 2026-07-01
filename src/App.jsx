@@ -2,18 +2,15 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Profile from "./components/Profile";
+import Menu from "./components/Menu";
 
 function App() {
   return (
     <Routes>
-      {/* Página principal */}
       <Route path="/" element={<Login />} />
-
-      {/* Registro */}
       <Route path="/register" element={<Register />} />
-
-      {/* Perfil */}
       <Route path="/profile" element={<Profile />} />
+      <Route path="/menu" element={<Menu />} />
     </Routes>
   );
 }
