@@ -1,0 +1,21 @@
+.menu-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #f1f5f9;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.menu-container h1 {
+  color: #1e3a8a;
+  font-size: 40px;
+}
+
+.menu-container p {
+  color: #64748b;
+  margin-top: 10px;
+}
