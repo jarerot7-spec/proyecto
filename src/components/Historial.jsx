@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { horasPico } from './data/horas';
 import './Historial.css';
 
@@ -6,6 +6,22 @@ export default function Historial({ pedidos }) {
     const numeroDiaActual = new Date().getDay();
     const indiceDia = numeroDiaActual === 0 ? 6 : numeroDiaActual - 1;
     const datosDiaActual = horasPico[indiceDia] || horasPico[0];
+
+    const [productos, setProductos] = useState([]);
+    const [cargandoProductos, setCargandoProductos] = useState(true);
+
+    useEffect(() => {
+        fetch('http://localhost:8080/api/productos')
+            .then((res) => res.json())
+            .then((datos) => {
+                setProductos(datos);
+                setCargandoProductos(false);
+            })
+            .catch((err) => {
+                console.error(err);
+                setCargandoProductos(false);
+            });
+    }, []);
 
     return (
         <div className="page-background-wrapper">
@@ -69,17 +85,12 @@ export default function Historial({ pedidos }) {
                         <h3>Inventario Disponible</h3>
                     </div>
 
-                    <div className="inventario-list">
-                        {productos && productos.map((item, index) => {
-                            const totalMaximoReferencia = 20;
-                            const porcentajeBarra = Math.min((item.porciones / totalMaximoReferencia) * 100, 100);
-
-                            let nivelStock = "Alto";
-                            if (item.porciones <= 0) nivelStock = "Agotado";
-                            else if (item.porciones <= 5) nivelStock = "Bajo";
-
-                            return (
-                                <div key={index} className="inventario-row">
+                    {cargandoProductos ? (
+                        <p className="no-pedidos-text">Cargando inventario...</p>
+                    ) : (
+                        <div className="inventario-list">
+                            {productos.map((item) => (
+                                <div key={item.idProducto} className="inventario-row">
                                     <div className="producto-detalle-col">
                                         <div className="producto-imagen-wrapper">
                                             {item.imagen && (
@@ -87,27 +98,19 @@ export default function Historial({ pedidos }) {
                                             )}
                                             <span className="producto-nombre-text">{item.nombre}</span>
                                         </div>
-
-                                        <div className="progress-bar-container">
-                                            <div
-                                                className={`progress-bar-fill fill-${nivelStock.toLowerCase()}`}
-                                                style={{ width: `${porcentajeBarra}%` }}
-                                            ></div>
-                                            <span className="progress-text-count">{item.porciones}/{totalMaximoReferencia}</span>
-                                        </div>
+                                        <span className="bloque-tipo">{item.categoria}</span>
                                     </div>
 
-                                    <span className={`badge-stock stock-${nivelStock.toLowerCase()}`}>
-                                        {nivelStock === "Agotado" ? "🚫 Agotado" : nivelStock}
+                                    <span className="badge-stock stock-alto">
+                                        S/ {item.precio.toFixed(2)}
                                     </span>
                                 </div>
-                            );
-                        })}
-                    </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
 
             </div>
         </div>
     );
 }
-
