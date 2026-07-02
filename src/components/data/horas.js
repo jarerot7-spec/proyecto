@@ -1,4 +1,3 @@
-// src/data/horas.js
 
 export const horasPico = [
     {

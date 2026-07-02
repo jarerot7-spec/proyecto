@@ -1,74 +1,60 @@
 import "./Profile.css";
+import { useNavigate } from "react-router-dom";
+import { getCurrentUser, logoutUser } from "../services/authService";
+import { getUserOrders } from "../services/orderService";
 
 function Profile() {
+  const navigate = useNavigate();
+
+  const user = getCurrentUser();
+
+  if (!user) return null;
+
+  const orders = getUserOrders(user.correo);
+
+  const handleLogout = () => {
+    logoutUser();
+    navigate("/");
+  };
+
   return (
-    <div className="profile-container">
+    <div className="profile-bg">
 
-      {/* Barra superior */}
-      <header className="navbar">
-        <h1>🍔 SmartFood</h1>
+      <div className="profile-card">
 
-        <div className="user-info">
-          <img
-            src="https://i.pravatar.cc/100"
-            alt="Usuario"
-          />
-          <span>Juan Pérez</span>
+        <div className="profile-header">
+          <div className="avatar">
+            {user.nombre?.charAt(0).toUpperCase()}
+          </div>
+
+          <div>
+            <h2>{user.nombre}</h2>
+            <p>{user.correo}</p>
+          </div>
         </div>
-      </header>
 
-      {/* Contenido */}
-      <div className="profile-content">
+        <div className="profile-section">
+          <h3>📦 Mis pedidos</h3>
 
-        {/* Información del usuario */}
-        <aside className="profile-card">
+          {orders.length === 0 ? (
+            <p className="empty">No tienes pedidos aún</p>
+          ) : (
+            <div className="orders">
+              {orders.map((item, index) => (
+                <div key={index} className="order-item">
+                  <span>
+                    🍔 {item?.producto?.nombre || item?.producto || "Producto"}
+                  </span>
+                  <small>{item.fecha}</small>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
 
-          <img
-            className="profile-photo"
-            src="https://i.pravatar.cc/200"
-            alt="Perfil"
-          />
-
-          <h2>Juan Pérez</h2>
-
-          <p>📧 juan@smartfood.com</p>
-
-          <p>📱 +51 999 999 999</p>
-
-          <button>Editar perfil</button>
-
-        </aside>
-
-        {/* Historial */}
-        <section className="orders">
-
-          <h2>📦 Mis pedidos</h2>
-
-          <div className="order-card">
-            <h3>Pedido #1054</h3>
-            <p>🍔 Smart Burger + Papas</p>
-            <p>📅 30/06/2026</p>
-            <span className="status delivered">Entregado</span>
-            <h4>S/ 32.90</h4>
-          </div>
-
-          <div className="order-card">
-            <h3>Pedido #1055</h3>
-            <p>🍕 Pizza Familiar</p>
-            <p>📅 01/07/2026</p>
-            <span className="status shipping">En camino</span>
-            <h4>S/ 45.00</h4>
-          </div>
-
-          <div className="order-card">
-            <h3>Pedido #1056</h3>
-            <p>🥗 Ensalada César</p>
-            <p>📅 02/07/2026</p>
-            <span className="status preparing">Preparando</span>
-            <h4>S/ 24.50</h4>
-          </div>
-
-        </section>
+        <button className="logout-btn" onClick={handleLogout}>
+          🚪 Cerrar sesión
+        </button>
 
       </div>
 
