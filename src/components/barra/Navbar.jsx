@@ -1,6 +1,6 @@
 import './Navbar.css';
 
-function Navbar({ pantallaActiva, onHomeClick, onPedidosClick }) {
+function Navbar({ pantallaActiva, onHomeClick, onPedidosClick, onProfileClick }) {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -22,7 +22,10 @@ function Navbar({ pantallaActiva, onHomeClick, onPedidosClick }) {
           🧾 <span>Pedidos</span>
         </button>
 
-        <button className={`navbar-btn ${pantallaActiva === 'perfil' ? 'activo' : ''}`}>
+        <button
+          className={`navbar-btn ${pantallaActiva === 'perfil' ? 'activo' : ''}`}
+          onClick={onProfileClick}
+        >
           👤 <span>Perfil</span>
         </button>
       </div>
