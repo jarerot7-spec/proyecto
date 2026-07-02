@@ -1,6 +1,5 @@
 import React from 'react';
 import { horasPico } from './data/horas';
-import { productos } from './data/productos';
 import './Historial.css';
 
 export default function Historial({ pedidos }) {
